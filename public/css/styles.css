@@ -179,9 +179,49 @@ img { max-width: 100%; height: auto; }
     .sidebar.show { transform: translateX(0); }
     .main-content { margin-left: 0; }
     .stat-cards { grid-template-columns: repeat(2, 1fr); }
+    .map-container { height: 380px; }
+    .table-container { overflow-x: auto; }
+    .table { min-width: 680px; }
+}
+@media (max-width: 991px) and (min-width: 768px) {
+    .stat-cards { grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .dashboard-card { font-size: 0.9rem; }
+    .dashboard-card .card-value { font-size: 1.5rem; }
+}
+@media (max-width: 767px) {
+    .table thead th:not(:first-child):not(:last-child) { min-width: 120px; }
+    .table tbody td { white-space: nowrap; font-size: 0.85rem; padding: 10px 12px; }
 }
 @media (max-width: 576px) {
+    .hero-section { height: 300px; }
     .hero-content h1 { font-size: 1.6rem; }
-    .stat-cards { grid-template-columns: 1fr; }
+    .hero-subtitle { font-size: 0.9rem; padding: 8px 20px; }
+    .section { padding: 40px 0; }
+    .stat-cards { grid-template-columns: 1fr; margin-top: -30px; }
+    .map-container { height: 320px; }
     .map-sidebar { position: relative; width: 100%; top: 0; right: 0; margin-top: 10px; }
+    .main-content { padding: 15px; }
+    .form-control, .form-select { font-size: 16px; padding: 12px 15px; }
+    .dashboard-card { padding: 15px; }
+    .dashboard-card .card-value { font-size: 1.5rem; }
+    .chart-container { padding: 15px 10px; }
+    .empresa-card .card-footer { flex-direction: column; gap: 10px; align-items: stretch; }
+    .empresa-card .card-footer .btn { width: 100%; }
+}
+
+/* Consistencia de altura en cards */
+.row.g-4 > [class*="col"] > .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.row.g-4 > [class*="col"] > .card .card-body { flex: 1; }
+
+/* Footer de cards de empresa */
+.empresa-card .card-footer {
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--gray-200);
 }
